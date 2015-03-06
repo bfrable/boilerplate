@@ -1,8 +1,10 @@
 module.exports = function(grunt) {
   grunt.initConfig({
-    serve: {
-        options: {
-            port: 9000
+    php: {
+        dist: {
+            options: {
+                port: 5000
+            }
         }
     },
     sass: {
@@ -63,7 +65,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-serve');
+  grunt.loadNpmTasks('grunt-php');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -71,4 +73,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.registerTask('default', ['sass', 'concat', 'uglify', 'cssmin']);
+  grunt.registerTask('server', ['php', 'watch']);
 };
