@@ -24,7 +24,7 @@
     <div id="main">
 
       <div class="wrapper">
-        Content Here
+        Content Here.
       </div>
    
     </div>
